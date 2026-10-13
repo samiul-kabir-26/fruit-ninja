@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950 text-slate-100">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blade Fruit — Admin Panel</title>
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body class="h-full flex flex-col font-sans bg-slate-950 text-slate-100 antialiased overflow-hidden">
+  <!-- Top Navigation Bar -->
+  <header id="admin-topbar" class="h-16 border-b border-white/10 bg-slate-900/90 backdrop-blur px-6 flex items-center justify-between z-30 select-none">
+    <div class="flex items-center gap-3">
+      <button id="btn-toggle-sidebar" class="md:hidden p-2 text-slate-400 hover:text-white">
+        ☰
+      </button>
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 to-rose-600 flex items-center justify-center text-lg shadow-sm">
+        🗡️
+      </div>
+      <div>
+        <span class="font-black italic text-lg tracking-tight text-white">BLADE FRUIT</span>
+        <span class="text-[10px] uppercase font-bold tracking-widest text-amber-400 ml-1.5 px-1.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">Admin</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 text-xs font-bold">
+      <span class="text-slate-400 flex items-center gap-1.5 hidden sm:flex">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Service Healthy
+      </span>
+      <button id="btn-admin-logout" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-white/10 cursor-pointer active:scale-95 transition">
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <!-- Shell Body (Sidebar + Content) -->
+  <div class="flex-1 flex overflow-hidden">
+    <!-- Sidebar -->
+    <aside id="admin-sidebar" class="w-60 border-r border-white/10 bg-slate-900/60 p-4 flex flex-col justify-between overflow-y-auto select-none hidden md:flex">
+      <nav class="space-y-1">
+        <a href="#/dashboard" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>📊</span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="#/theme" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>🎨</span>
+          <span>Theme Editor</span>
+        </a>
+
+        <a href="#/settings" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>⚙️</span>
+          <span>Gameplay Settings</span>
+        </a>
+
+        <a href="#/events" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>📜</span>
+          <span>Events Explorer</span>
+        </a>
+
+        <a href="#/leaderboard" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>🏆</span>
+          <span>Leaderboard</span>
+        </a>
+
+        <a href="#/players" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>👥</span>
+          <span>Players</span>
+        </a>
+
+        <a href="#/webhooks" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>🔗</span>
+          <span>Webhooks</span>
+        </a>
+
+        <a href="#/apikeys" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>🔑</span>
+          <span>API Keys</span>
+        </a>
+
+        <a href="#/audit" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-bold text-xs text-slate-400 hover:text-white hover:bg-white/5 transition">
+          <span>🛡️</span>
+          <span>Audit Log</span>
+        </a>
+      </nav>
+
+      <!-- Bottom link to game -->
+      <div class="pt-4 border-t border-white/5">
+        <a href="/play" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 font-bold text-xs flex items-center justify-center gap-2 border border-white/5 transition">
+          <span>🎮</span>
+          <span>Launch Game</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main View Content Area -->
+    <main class="flex-1 overflow-y-auto p-6 md:p-8 bg-slate-950">
+      <div id="admin-view-container" class="max-w-7xl mx-auto"></div>
+    </main>
+  </div>
+
+  <script type="module" src="/admin/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "name": "blade-fruit",
+  "version": "1.0.0",
+  "description": "Embeddable Fruit-Slicing Game Service",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "nodemon --watch server --watch server/shared server/index.js",
+    "build:css": "tailwindcss -i ./src/styles/game.css -o ./public/css/game.css --minify && tailwindcss -i ./src/styles/admin.css -o ./public/css/admin.css --minify",
+    "watch:css": "tailwindcss -i ./src/styles/game.css -o ./public/css/game.css --watch & tailwindcss -i ./src/styles/admin.css -o ./public/css/admin.css --watch",
+    "start": "node server/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "migrate": "node server/db/migrate.js"
+  },
+  "keywords": [
+    "game",
+    "fruit-ninja",
+    "canvas",
+    "arcade"
+  ],
+  "author": "Blade Fruit Team",
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.6.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.1",
+    "file-type": "^21.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "music-metadata": "^11.14.0",
+    "pino": "^10.3.1",
+    "pino-http": "^11.0.0",
+    "sharp": "^0.34.5",
+    "ulid": "^2.4.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2",
+    "tailwindcss": "^4.2.2",
+    "vitest": "^4.1.2"
+  }
+}

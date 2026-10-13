@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full w-full overflow-hidden bg-slate-950">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Blade Fruit</title>
+  <link rel="stylesheet" href="/css/game.css" />
+  <style>
+    /* Letterbox-free responsive game canvas container */
+    #game-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #020617;
+      touch-action: none;
+    }
+    #game-canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      touch-action: none;
+    }
+  </style>
+</head>
+<body class="h-full w-full overflow-hidden select-none touch-none bg-slate-950 text-white font-sans">
+  <div id="game-container">
+    <!-- HTML5 2D Game Canvas -->
+    <canvas id="game-canvas"></canvas>
+
+    <!-- DOM HUD and Screen Overlays -->
+    <div id="hud-container"></div>
+    <div id="menu-container"></div>
+    <div id="countdown-container"></div>
+    <div id="pause-container"></div>
+    <div id="gameover-container"></div>
+    <div id="leaderboard-container"></div>
+    <div id="nickname-container"></div>
+  </div>
+
+  <script type="module" src="/play/js/main.js"></script>
+</body>
+</html>

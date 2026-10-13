@@ -1,0 +1,20 @@
+services:
+  blade-fruit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blade-fruit
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:8080"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - DATABASE_PATH=/data/blade-fruit.db
+      - UPLOAD_DIR=/data/uploads
+    volumes:
+      - blade-fruit-data:/data
+
+volumes:
+  blade-fruit-data:
